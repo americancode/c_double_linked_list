@@ -15,7 +15,7 @@ typedef struct _itr {
 	Node *leftNode;
 	Node *rightNode;
 	Node *lastReturned;
-	struct _list *list;
+	LST *list;
 } ITR;
 
 

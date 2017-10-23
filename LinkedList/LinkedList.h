@@ -33,4 +33,7 @@ void *listRemove(LST *list, int index);
 //gets the size of the list
 int listSize(LST *size);
 
+//Free all the nodes in the list
+void freeList(LST *list);
+
 #endif /* LINKEDLIST_LINKEDLIST_H_ */
