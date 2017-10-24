@@ -1,22 +1,23 @@
 /*
- * ListIterator.c
+ * ListListIterator.c
  *
- * Implements the list Iterator
+ * Implements the list LinkedListIterator
  *
  *  Created on: Oct 18, 2017
  *      Author: Nathaniel Churchill
  */
 
+#include "LinkedListIterator.h"
+
 #include <stdlib.h>
 #include "LinkedList.h"
-#include "ListIterator.h"
 
 /**
  * This function makes an iterator from a list
  * list : the list to make the iterator from
  */
-ITR *mkIter(LST *list) {
-	ITR *itr = malloc(sizeof(ITR));
+LinkedListIterator *newLinkedListIterator(LinkedList *list) {
+	LinkedListIterator *itr = malloc(sizeof(LinkedListIterator));
 	itr->list = list;
 	itr->leftNode = list->head;
 	itr->rightNode = list->head->next;
@@ -27,7 +28,7 @@ ITR *mkIter(LST *list) {
 /**
  * This function advances the iterator ahead one position and returns the "skipped" over node data
  */
-void *iterNext(ITR *itr) {
+void *iteratorNext(LinkedListIterator *itr) {
 	if ((itr->rightNode->data == NULL) || (itr->list->size == 0)) {
 			return NULL;
 	}
@@ -40,7 +41,7 @@ void *iterNext(ITR *itr) {
 /**
  * This function advances the iterator backward one position and returns the "skipped" over node data
  */
-void *iterPrevious(ITR *itr) {
+void *iteratorPrevious(LinkedListIterator *itr) {
 	if (itr->leftNode->data == NULL || (itr->list->size == 0)) {
 			return NULL;
 	}
@@ -53,9 +54,9 @@ void *iterPrevious(ITR *itr) {
 /**
  * Inserts a node before the current position
  */
-void iterAppend(ITR *itr, void *data) {
+void iteratorAdd(LinkedListIterator *itr, void *data) {
 	if (itr->list->size == 0){ // if the list is empty
-		Node *newNode = allocNode();
+		LinkedListNode *newNode = newLinkedListNode();
 		newNode->next = itr->list->head;
 		newNode->previous = itr->list->head;
 		itr->list->head->next = newNode;
@@ -63,9 +64,9 @@ void iterAppend(ITR *itr, void *data) {
 		itr->leftNode = itr->list->head;
 		itr->rightNode = itr->list->head->next;
 	} else {
-		Node *lNode = itr->leftNode;
-		Node *rNode = itr->rightNode;
-		Node *newNode = allocNode();
+		LinkedListNode *lNode = itr->leftNode;
+		LinkedListNode *rNode = itr->rightNode;
+		LinkedListNode *newNode = newLinkedListNode();
 		newNode->data = data;
 
 		newNode->next = rNode;
@@ -85,11 +86,11 @@ void iterAppend(ITR *itr, void *data) {
 /**
  * This function inserts a node before the given iterator position
  */
-void iterInsert(ITR *itr, void *data) {
+void iteratorInsert(LinkedListIterator *itr, void *data) {
 	if (!(itr->leftNode->data == NULL)) { //cannot insert
-		Node *lNode = itr->leftNode->previous;
-		Node *rNode = itr->leftNode;
-		Node *newNode = allocNode();
+		LinkedListNode *lNode = itr->leftNode->previous;
+		LinkedListNode *rNode = itr->leftNode;
+		LinkedListNode *newNode = newLinkedListNode();
 		newNode->data = data;
 
 		newNode->next = rNode;
@@ -108,7 +109,7 @@ void iterInsert(ITR *itr, void *data) {
 /**
  * Rewinds the iterator to the starting position;
  */
-void iterRewind(ITR *itr) {
+void iteratorRewind(LinkedListIterator *itr) {
 	itr->leftNode = itr->list->head;
 		itr->rightNode = itr->list->head->next;
 		itr->lastReturned = NULL;
@@ -117,12 +118,12 @@ void iterRewind(ITR *itr) {
 /**
  * Removes a node
  */
-void *iterRemove(ITR *itr) {
+void *iteratorRemove(LinkedListIterator *itr) {
 	if (itr->lastReturned == NULL){
 		return NULL;
 	}
-	Node *lNode = itr->lastReturned->previous;
-	Node *rNode = itr->lastReturned->next;
+	LinkedListNode *lNode = itr->lastReturned->previous;
+	LinkedListNode *rNode = itr->lastReturned->next;
 	void *data = itr->lastReturned->data;
 
 	lNode->next = rNode;

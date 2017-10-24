@@ -8,32 +8,32 @@
 #ifndef LINKEDLIST_LINKEDLIST_H_
 #define LINKEDLIST_LINKEDLIST_H_
 
-#include "ListNode.h"
+#include "LinkedListNode.h"
 
-typedef struct _list{
-	Node *head;
+typedef struct _list {
+	LinkedListNode *head;
 	int size;
-} LST;
+} LinkedList;
 
 //Make a list
-LST *mkList();
+LinkedList *newLinkedList();
 
 //append to the end of the list
-void listAppend(LST *list, void *data);
+void listAdd(LinkedList *list, void *data);
 
 //insert to the front of the list
-void listInsert(LST *list, void *data);
+void listAddFirst(LinkedList *list, void *data);
 
 //get the nth value
-void *listGet(LST *list, int index);
+void *listGet(LinkedList *list, int index);
 
 //remove the nth item
-void *listRemove(LST *list, int index);
+void *listRemove(LinkedList *list, int index);
 
 //gets the size of the list
-int listSize(LST *size);
+int listSize(LinkedList *size);
 
 //Free all the nodes in the list
-void freeList(LST *list);
+void listFree(LinkedList *list);
 
 #endif /* LINKEDLIST_LINKEDLIST_H_ */

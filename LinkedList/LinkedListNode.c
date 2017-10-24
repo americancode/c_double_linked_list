@@ -5,14 +5,15 @@
  *      Author: Nathaniel Churchill
  */
 
+#include "LinkedListNode.h"
+
 #include <stdlib.h>
-#include "ListNode.h"
 
 /**
  * Allocates the node in memory
  */
-Node *allocNode(){
-	Node *node = malloc(sizeof(Node));
+LinkedListNode *newLinkedListNode(){
+	LinkedListNode *node = malloc(sizeof(LinkedListNode));
 	node->data = NULL;
 	return node;
 }
