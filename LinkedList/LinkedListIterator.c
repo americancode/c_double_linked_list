@@ -52,7 +52,8 @@ void *iteratorPrevious(LinkedListIterator *itr) {
 }
 
 /**
- * Inserts a node before the current position
+ * Imitates the JAVA iterator add method
+ * Adds a node;  iterNext() will be unaffected
  */
 void iteratorAdd(LinkedListIterator *itr, void *data) {
 	if (itr->list->size == 0){ // if the list is empty
