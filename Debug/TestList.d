@@ -1,11 +1,11 @@
 TestList.o: ../TestList.c ../LinkedList/LinkedList.h \
- ../LinkedList/ListNode.h ../LinkedList/ListIterator.h \
+ ../LinkedList/LinkedListNode.h ../LinkedList/LinkedListIterator.h \
  ../LinkedList/LinkedList.h
 
 ../LinkedList/LinkedList.h:
 
-../LinkedList/ListNode.h:
+../LinkedList/LinkedListNode.h:
 
-../LinkedList/ListIterator.h:
+../LinkedList/LinkedListIterator.h:
 
 ../LinkedList/LinkedList.h:

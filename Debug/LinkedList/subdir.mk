@@ -5,18 +5,18 @@
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
 ../LinkedList/LinkedList.c \
-../LinkedList/ListIterator.c \
-../LinkedList/ListNode.c 
+../LinkedList/LinkedListIterator.c \
+../LinkedList/LinkedListNode.c 
 
 OBJS += \
 ./LinkedList/LinkedList.o \
-./LinkedList/ListIterator.o \
-./LinkedList/ListNode.o 
+./LinkedList/LinkedListIterator.o \
+./LinkedList/LinkedListNode.o 
 
 C_DEPS += \
 ./LinkedList/LinkedList.d \
-./LinkedList/ListIterator.d \
-./LinkedList/ListNode.d 
+./LinkedList/LinkedListIterator.d \
+./LinkedList/LinkedListNode.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes

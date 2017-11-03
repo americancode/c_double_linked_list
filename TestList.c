@@ -206,7 +206,7 @@ int main(int argc, char *argv[]) {
 
 
 
-	printf("Calling iterPrevious(): %d\n", (int) iterPrevious(itr2));
+	printf("Calling iterPrevious(): %d\n", (int) iteratorPrevious(itr2));
 
 
 
