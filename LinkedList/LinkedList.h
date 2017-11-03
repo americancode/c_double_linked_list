@@ -15,6 +15,8 @@ typedef struct _list {
 	int size;
 } LinkedList;
 
+
+
 //Make a list
 LinkedList *newLinkedList();
 

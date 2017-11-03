@@ -204,7 +204,9 @@ int main(int argc, char *argv[]) {
 				printf("\n");
 
 
-	printf("Calling iteratorPrevious(): %d\n", iteratorPrevious(itr2));
+
+
+	printf("Calling iterPrevious(): %d\n", (int) iterPrevious(itr2));
 
 
 
