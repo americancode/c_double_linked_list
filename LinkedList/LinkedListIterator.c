@@ -10,6 +10,7 @@
 #include "LinkedListIterator.h"
 
 #include <stdlib.h>
+#include <stdio.h>
 #include "LinkedList.h"
 
 /**
@@ -136,4 +137,8 @@ void *iteratorRemove(LinkedListIterator *itr) {
 	free(itr->lastReturned);
 	itr->list->size--;
 	return data;
+}
+
+void iteratorFree(LinkedListIterator *itr) {
+	free(itr);
 }

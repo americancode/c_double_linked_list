@@ -41,4 +41,7 @@ void *iteratorRemove(LinkedListIterator *iter);
 //Rewind the iterator
 void iteratorRewind(LinkedListIterator *iter);
 
+void iteratorFree(LinkedListIterator *iter);
+
+
 #endif /* LINKEDLISTITERATOR_H_ */
