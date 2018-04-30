@@ -11,8 +11,8 @@
 #include "LinkedListNode.h"
 
 typedef struct _list {
-	LinkedListNode *head;
-	int size;
+								LinkedListNode *head;
+								int size;
 } LinkedList;
 
 

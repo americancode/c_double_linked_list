@@ -12,10 +12,10 @@
 #include "LinkedListNode.h"
 
 typedef struct _LinkedListIterator {
-	LinkedListNode *leftNode;
-	LinkedListNode *rightNode;
-	LinkedListNode *lastReturned;
-	LinkedList *list;
+								LinkedListNode *leftNode;
+								LinkedListNode *rightNode;
+								LinkedListNode *lastReturned;
+								LinkedList *list;
 } LinkedListIterator;
 
 

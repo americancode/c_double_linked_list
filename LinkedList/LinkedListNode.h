@@ -9,9 +9,9 @@
 #define LINKEDLISTNODE_H_
 
 typedef struct _node {
-	void *data;
-	struct _node *next;
-	struct _node *previous;
+								void *data;
+								struct _node *next;
+								struct _node *previous;
 } LinkedListNode;
 
 LinkedListNode *newLinkedListNode();
