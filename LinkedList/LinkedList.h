@@ -10,12 +10,11 @@
 
 #include "LinkedListNode.h"
 
-typedef struct _list {
-								LinkedListNode *head;
-								int size;
+typedef struct _list
+{
+	LinkedListNode *head;
+	int size;
 } LinkedList;
-
-
 
 //Make a list
 LinkedList *newLinkedList();

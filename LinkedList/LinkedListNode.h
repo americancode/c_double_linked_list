@@ -8,10 +8,11 @@
 #ifndef LINKEDLISTNODE_H_
 #define LINKEDLISTNODE_H_
 
-typedef struct _node {
-								void *data;
-								struct _node *next;
-								struct _node *previous;
+typedef struct _node
+{
+	void *data;
+	struct _node *next;
+	struct _node *previous;
 } LinkedListNode;
 
 LinkedListNode *newLinkedListNode();

@@ -11,13 +11,13 @@
 #include "LinkedList.h"
 #include "LinkedListNode.h"
 
-typedef struct _LinkedListIterator {
-								LinkedListNode *leftNode;
-								LinkedListNode *rightNode;
-								LinkedListNode *lastReturned;
-								LinkedList *list;
+typedef struct _LinkedListIterator
+{
+	LinkedListNode *leftNode;
+	LinkedListNode *rightNode;
+	LinkedListNode *lastReturned;
+	LinkedList *list;
 } LinkedListIterator;
-
 
 //Get an LinkedListIterator
 LinkedListIterator *newLinkedListIterator(LinkedList *list);
@@ -34,7 +34,6 @@ void *iteratorNext(LinkedListIterator *iter);
 //get the previous element
 void *iteratorPrevious(LinkedListIterator *iter);
 
-
 //Remove the last item returned
 void *iteratorRemove(LinkedListIterator *iter);
 
@@ -42,6 +41,5 @@ void *iteratorRemove(LinkedListIterator *iter);
 void iteratorRewind(LinkedListIterator *iter);
 
 void iteratorFree(LinkedListIterator *iter);
-
 
 #endif /* LINKEDLISTITERATOR_H_ */

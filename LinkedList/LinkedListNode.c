@@ -12,8 +12,9 @@
 /**
  * Allocates the node in memory
  */
-LinkedListNode *newLinkedListNode(){
-								LinkedListNode *node = malloc(sizeof(LinkedListNode));
-								node->data = NULL;
-								return node;
+LinkedListNode *newLinkedListNode()
+{
+	LinkedListNode *node = malloc(sizeof(LinkedListNode));
+	node->data = NULL;
+	return node;
 }
