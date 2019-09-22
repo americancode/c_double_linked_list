@@ -1,2 +1,2 @@
 
-gcc *.c  LinkedList/*.c 
+gcc *.c  LinkedList/*.c -o test
