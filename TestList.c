@@ -31,7 +31,7 @@ int main(int argc, char *argv[]) {
 	printf("Inserting 30 at the list beginning with listAddFirst()\n");
 	listAddFirst(list, (void *) 30);
 	printf("Print the list from front to back\n");
-	//test forward traversal with listGet
+	//Test forward traversal with listGet
 	for (i = 0; i < list->size; i++) {
 		printf("%d | ", (int) listGet(list, i));
 	}
@@ -95,7 +95,7 @@ int main(int argc, char *argv[]) {
 	printf("\n\n\n");
 
 	printf(
-			"Removing a node with iteratorRemove should remove 1. iteratorRemove() removes the last returned item\n");
+			"Removing a node with iteratorRemove should remove 1. iteratorRemove() removes the last returned item. Print list in order\n");
 	iteratorRemove(itr);
 	for (i = 0; i < list->size; i++) {
 		printf("%d | ", (int) listGet(list, i));

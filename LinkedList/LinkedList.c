@@ -180,5 +180,4 @@ void listFree(LinkedList *list)
 		free(rmNode);
 	}
 	free(list->head);
-	free(&list->size);
 }
