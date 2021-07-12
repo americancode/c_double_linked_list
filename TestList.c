@@ -22,7 +22,7 @@ int main(int argc, char *argv[]) {
 	}
 	printf("Print the list from front to back 1 | 2 | ... | 25 |\n");
 	for (i = 0; i < list->size; i++) {
-		printf("%d | ", (int) listGet(list, i));
+		printf("%p | ", listGet(list, i));
 	}
 	printf("\n");
 	printf("The list size is: %d  \n", listSize(list));
@@ -33,7 +33,7 @@ int main(int argc, char *argv[]) {
 	printf("Print the list from front to back\n");
 	//Test forward traversal with listGet
 	for (i = 0; i < list->size; i++) {
-		printf("%d | ", (int) listGet(list, i));
+		printf("%p | ", listGet(list, i));
 	}
 	printf("\n");
 	printf("The list size is: %d  \n", listSize(list));
@@ -43,7 +43,7 @@ int main(int argc, char *argv[]) {
 	listRemove(list, 0);
 	//test forward traversal with listGet
 	for (i = 0; i < list->size; i++) {
-		printf("%d | ", (int) listGet(list, i));
+		printf("%p | ", listGet(list, i));
 	}
 	printf("\n");
 	printf("The list size is: %d  \n", listSize(list));
@@ -55,16 +55,16 @@ int main(int argc, char *argv[]) {
 
 	printf(
 			"Iterating back and forth with next and previous------------------------------------\n");
-	printf("%d | ", (int) iteratorNext(itr));
-	printf("%d | ", (int) iteratorPrevious(itr));
-	printf("%d | ", (int) iteratorNext(itr));
-	printf("%d | ", (int) iteratorPrevious(itr));
-	printf("%d | ", (int) iteratorNext(itr));
-	printf("%d | ", (int) iteratorPrevious(itr));
-	printf("%d | ", (int) iteratorNext(itr));
-	printf("%d | ", (int) iteratorPrevious(itr));
-	printf("%d | ", (int) iteratorNext(itr));
-	printf("%d | ", (int) iteratorPrevious(itr));
+	printf("%p | ", iteratorNext(itr));
+	printf("%p | ", iteratorPrevious(itr));
+	printf("%p | ", iteratorNext(itr));
+	printf("%p | ", iteratorPrevious(itr));
+	printf("%p | ", iteratorNext(itr));
+	printf("%p | ", iteratorPrevious(itr));
+	printf("%p | ", iteratorNext(itr));
+	printf("%p | ", iteratorPrevious(itr));
+	printf("%p | ", iteratorNext(itr));
+	printf("%p | ", iteratorPrevious(itr));
 	printf("\n\n\n");
 
 	printf("Rewinding itr\n");
@@ -74,22 +74,22 @@ int main(int argc, char *argv[]) {
 	iteratorNext(itr);
 	iteratorNext(itr);
 	iteratorNext(itr);
-	printf("Calling iteratorRemove() %d\n", (int) iteratorRemove(itr));
-	printf("Calling iteratorPrevious():  %d\n", (int) iteratorPrevious(itr));
+	printf("Calling iteratorRemove() %p\n", iteratorRemove(itr));
+	printf("Calling iteratorPrevious():  %p\n", iteratorPrevious(itr));
 	printf("calling iteratorNext() 2x\n");
 	iteratorNext(itr);
 	iteratorNext(itr);
 
 	printf("Printing the list forwards with the LinkedListIterator\n");
 	for (i = 0; i < list->size; i++) {
-		printf("%d | ", (int) iteratorNext(itr));
+		printf("%p | ", iteratorNext(itr));
 	}
 	printf("\n");
 	printf("\n\n\n");
 
 	printf("Printing the list backwards with the LinkedListIterator\n");
 	for (i = 0; i < list->size; i++) {
-		printf("%d | ", (int) iteratorPrevious(itr));
+		printf("%p | ", iteratorPrevious(itr));
 	}
 	printf("\n");
 	printf("\n\n\n");
@@ -98,7 +98,7 @@ int main(int argc, char *argv[]) {
 			"Removing a node with iteratorRemove should remove 1. iteratorRemove() removes the last returned item. Print list in order\n");
 	iteratorRemove(itr);
 	for (i = 0; i < list->size; i++) {
-		printf("%d | ", (int) listGet(list, i));
+		printf("%p | ", listGet(list, i));
 	}
 	printf("\n");
 	printf("The list size is: %d  \n", listSize(list));
@@ -107,7 +107,7 @@ int main(int argc, char *argv[]) {
 	printf("Appending 25 BACK with iteratorAdd()\n");
 	iteratorAdd(itr, (void *) 25);
 	for (i = 0; i < list->size; i++) {
-		printf("%d | ", (int) listGet(list, i));
+		printf("%p | ", listGet(list, i));
 	}
 	printf("\n");
 	printf("The list size is: %d  \n", listSize(list));
@@ -116,7 +116,7 @@ int main(int argc, char *argv[]) {
 	printf("Inserting 80 with iteratorInsert()\n");
 	iteratorInsert(itr, (void *) 80);
 	for (i = 0; i < list->size; i++) {
-		printf("%d | ", (int) listGet(list, i));
+		printf("%p | ", listGet(list, i));
 	}
 	printf("\n");
 	printf("The list size is: %d  \n", listSize(list));
@@ -137,13 +137,13 @@ int main(int argc, char *argv[]) {
 		for (i = 1; i < 26; i++) {
 			listAdd(list, (void*) i);
 		}
-	printf("listGet with index 40: %d \n", (int) listGet(list, 40));
-	printf("listGet with index -8: %d \n", (int) listGet(list, -8));
+	printf("listGet with index 40: %p \n", listGet(list, 40));
+	printf("listGet with index -8: %p \n", listGet(list, -8));
 
 	printf("listRemove(list, -1) \n");
 	listRemove(list, -1);
 	for (i = 0; i < list->size; i++) {
-		printf("%d | ", (int) listGet(list, i));
+		printf("%p | ", listGet(list, i));
 	}
 	printf("\n");
 	printf("The list size is: %d  \n", listSize(list));
@@ -151,7 +151,7 @@ int main(int argc, char *argv[]) {
 	printf("listRemove(list, 25) \n");
 	listRemove(list, -1);
 	for (i = 0; i < list->size; i++) {
-		printf("%d | ", (int) listGet(list, i));
+		printf("%p | ", listGet(list, i));
 	}
 	printf("\n");
 	printf("The list size is: %d  \n", listSize(list));
@@ -165,16 +165,16 @@ int main(int argc, char *argv[]) {
 
 
 	for (i = 0; i < list->size; i++) {
-			printf("%d | ", (int) listGet(list, i));
+			printf("%p | ", listGet(list, i));
 		}
 		printf("\n");
 
 	printf("making a new iterator.\n");
-	printf("calling remove. should give 0 for null:  %d\n", (int) iteratorRemove(itr2));
-	printf("calling remove. should give 0 for null:  %d\n", (int) iteratorRemove(itr2));
+	printf("calling remove. should give 0 for null:  %p\n", iteratorRemove(itr2));
+	printf("calling remove. should give 0 for null:  %p\n", iteratorRemove(itr2));
 
 	for (i = 0; i < list->size; i++) {
-			printf("%d | ", (int) listGet(list, i));
+			printf("%p | ", listGet(list, i));
 		}
 		printf("\n");
 
@@ -186,12 +186,12 @@ int main(int argc, char *argv[]) {
 	iteratorNext(itr2);
 
 
-	printf("calling remove. should remove 4:  %d\n", (int) iteratorRemove(itr2));
-		printf("calling remove. should give 0 for null:  %d\n", (int) iteratorRemove(itr2));
+	printf("calling remove. should remove 4:  %p\n", iteratorRemove(itr2));
+		printf("calling remove. should give 0 for null:  %p\n", iteratorRemove(itr2));
 
 
 		for (i = 0; i < list->size; i++) {
-				printf("%d | ", (int) listGet(list, i));
+				printf("%p | ", listGet(list, i));
 			}
 			printf("\n");
 
@@ -199,14 +199,14 @@ int main(int argc, char *argv[]) {
 	iteratorAdd(itr2, (void *)4);
 
 	for (i = 0; i < list->size; i++) {
-					printf("%d | ", (int) listGet(list, i));
+					printf("%p | ", listGet(list, i));
 				}
 				printf("\n");
 
 
 
 
-	printf("Calling iterPrevious(): %d\n", (int) iteratorPrevious(itr2));
+	printf("Calling iterPrevious(): %p\n", iteratorPrevious(itr2));
 
 
 
